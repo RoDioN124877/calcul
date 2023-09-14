@@ -1,5 +1,9 @@
-body {
+.body__black {
   background: var(--dark-background, #17171C);
+}
+
+.body__white {
+  background: var(--dark-background, #e4e4ff);
 }
 
 .calculconteiner {
@@ -12,6 +16,10 @@ body {
 .calculconteiner .C {
   grid-column: 1/3;
   background: var(--dark-button-medium-emphasis, #4E505F);
+}
+.calculconteiner .C__white {
+  grid-column: 1/3;
+  background: var(--dark-button-medium-emphasis, #ffffff);
 }
 .calculconteiner .delenie {
   grid-column: 3/5;
@@ -27,20 +35,30 @@ body {
   line-height: 40px;
   /* 125% */
 }
+.calculconteiner .button__calcul__white {
+  border-radius: 24px;
+  background: var(--dark-button-low-emphasis, rgb(254, 255, 249));
+  color: var(--dark-text, #000000);
+  text-align: center;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  /* 125% */
+}
 .calculconteiner .iter, .calculconteiner .res {
   background: var(--dark-button-high-emphasis, #4B5EFC);
 }
 
 section {
   width: 335px;
-  height: 812px;
   margin: auto;
   height: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  margin-top: 300px;
+  margin-top: 200px;
 }
 section .primer__conteiner {
   display: flex;
@@ -53,4 +71,65 @@ section .primer__conteiner .primer__all {
   font-style: normal;
   font-weight: 400;
   line-height: 40px;
+}
+section .primer__conteiner .primer__all__white {
+  color: #000000;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }/*# sourceMappingURL=main.css.map */
